@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="header">Welcome to the Ariton points system!</div>
+  <div class="sub-header">Join the fun and start earning point.</div>
+
+  <div *ngIf="platform === 'tdesktop'; else mobileForm">
+    <div id="qr-code">
+      <h2>Scan the QR code with your mobile device to continue.</h2>
+      <img [src]="qrCodeDataUrl" alt="QR Code">
+    </div>
+  </div>
+
+  <ng-template #mobileForm>
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required email pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error-message">
+          <p *ngIf="emailInput.errors?.['required']">Email is required.</p>
+          <p *ngIf="emailInput.errors?.['email']">Please enter a valid email address.</p>
+        </div>
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid || submitting">Submit</button>
+    </form>
+  </ng-template>
+
+  <p *ngIf="submitting">Submitting...</p>
+  <p *ngIf="successMessage">{{ successMessage }}</p>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
