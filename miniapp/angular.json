@@ -109,12 +109,12 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "name": "miladsoft",
+            "name": "milad",
             "email": "miladsoft@yahoo.com",
             "baseHref": "/",
             "dir": "dist/miniapp",
-            "repo": "https://github.com/brick-robot/brick-robot.github.io.git",
-            "cname": "brick-robot.github.io"
+            "repo": "https://github.com/aritonbot/aritonbot.github.io.git",
+            "cname": "aritonbot.github.io"
           }
         }
       }
