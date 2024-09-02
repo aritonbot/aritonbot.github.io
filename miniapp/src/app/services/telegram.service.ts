@@ -92,7 +92,7 @@ export class TelegramService {
 
   getInviteLink(): string {
     const userId = this.webApp.initDataUnsafe.user?.id;
-    return `https://t.me/brick_robot?startapp=${userId}`;
+    return `https://t.me/aritonbot?startapp=${userId}`;
   }
 
   sendReferrerIdToWebApp(referrerId: string): void {
