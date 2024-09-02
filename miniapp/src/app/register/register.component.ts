@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
 
 
   generateQRCode(): void {
-    const qrData = this.referrerId ? `https://t.me/brick_robot?startapp=${this.referrerId}` : 'https://t.me/brick_robot';
+    const qrData = this.referrerId ? `https://t.me/aritonbot?startapp=${this.referrerId}` : 'https://t.me/aritonbot';
     QRCode.toDataURL(qrData, { errorCorrectionLevel: 'H' }, (err, url) => {
       if (err) {
         console.error('Error generating QR code', err);
